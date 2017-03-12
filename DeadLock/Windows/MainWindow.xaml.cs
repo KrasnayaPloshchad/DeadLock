@@ -1,4 +1,6 @@
 ﻿using System.Windows;
+using DeadLock.Classes;
+using Syncfusion.Windows.Shared;
 
 namespace DeadLock.Windows
 {
@@ -10,6 +12,12 @@ namespace DeadLock.Windows
         public MainWindow()
         {
             InitializeComponent();
+            LoadTheme();
+        }
+
+        internal void LoadTheme()
+        {
+            StyleManager.ChangeStyle(this);
         }
     }
 }

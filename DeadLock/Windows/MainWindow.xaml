@@ -10,6 +10,12 @@
     mc:Ignorable="d"
     Title="DeadLock" Height="350" Width="525" WindowStartupLocation="CenterScreen" Icon="/DeadLock;component/dlicon.ico">
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
         <Menu>
             <MenuItem Header="File">
                 <MenuItem Header="Open file(s)">
@@ -142,5 +148,24 @@
                 </MenuItem>
             </MenuItem>
         </Menu>
+        <ListView Grid.Row="1">
+            <ListView.View>
+                <GridView x:Name="DynGridFile">
+                    <GridViewColumn Header="Path" DisplayMemberBinding="{Binding ActualPath}" Width="Auto" />
+                    <GridViewColumn Header="Status" DisplayMemberBinding="{Binding Status}" Width="Auto" />
+                    <GridViewColumn Header="Ownership" DisplayMemberBinding="{Binding Ownership}" Width="Auto" />
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Label Grid.Row="2" Content="Details:"></Label>
+        <ListView Grid.Row="3">
+            <ListView.View>
+                <GridView x:Name="DynGridDetails">
+                    <GridViewColumn Header="File name" DisplayMemberBinding="{Binding FileName}" Width="Auto" />
+                    <GridViewColumn Header="Path" DisplayMemberBinding="{Binding FilePath}" Width="Auto" />
+                    <GridViewColumn Header="Process ID" DisplayMemberBinding="{Binding ProcessID}" Width="Auto" />
+                </GridView>
+            </ListView.View>
+        </ListView>
     </Grid>
 </syncfusion:ChromelessWindow>
