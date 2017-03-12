@@ -1,0 +1,146 @@
+﻿<syncfusion:ChromelessWindow
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:local="clr-namespace:DeadLock"
+    xmlns:syncfusion="http://schemas.syncfusion.com/wpf" x:Class="DeadLock.Windows.MainWindow"
+    TitleTextAlignment="Center"
+    AllowsTransparency="True"
+    mc:Ignorable="d"
+    Title="DeadLock" Height="350" Width="525" WindowStartupLocation="CenterScreen" Icon="/DeadLock;component/dlicon.ico">
+    <Grid>
+        <Menu>
+            <MenuItem Header="File">
+                <MenuItem Header="Open file(s)">
+                    <MenuItem.Icon>
+                        <Image Width="16" Height="16" Source="/DeadLock;component/Resources/file.png"></Image>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="Open folder">
+                    <MenuItem.Icon>
+                        <Image Width="16" Height="16" Source="/DeadLock;component/Resources/folder.png"></Image>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <Separator></Separator>
+                <MenuItem Header="Restart">
+                    <MenuItem.Icon>
+                        <Image Width="16" Height="16" Source="/DeadLock;component/Resources/restart.png"></Image>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="Exit">
+                    <MenuItem.Icon>
+                        <Image Width="16" Height="16" Source="/DeadLock;component/Resources/exit.png"></Image>
+                    </MenuItem.Icon>
+                </MenuItem>
+            </MenuItem>
+            <MenuItem Header="Edit">
+                <MenuItem Header="Unlock">
+                    <MenuItem.Icon>
+                        <Image Width="16" Height="16" Source="/DeadLock;component/Resources/unlock.png"></Image>
+                    </MenuItem.Icon>
+                    <MenuItem Header="Unlock">
+                        <MenuItem.Icon>
+                            <Image Width="16" Height="16" Source="/DeadLock;component/Resources/unlock.png"></Image>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <Separator></Separator>
+                    <MenuItem Header="Copy">
+                        <MenuItem.Icon>
+                            <Image Width="16" Height="16" Source="/DeadLock;component/Resources/copy.png"></Image>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <MenuItem Header="Move">
+                        <MenuItem.Icon>
+                            <Image Width="16" Height="16" Source="/DeadLock;component/Resources/move.png"></Image>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <Separator></Separator>
+                    <MenuItem Header="Remove">
+                        <MenuItem.Icon>
+                            <Image Width="16" Height="16" Source="/DeadLock;component/Resources/delete.png"></Image>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                </MenuItem>
+                <MenuItem Header="Ownership">
+                    <MenuItem.Icon>
+                        <Image Width="16" Height="16" Source="/DeadLock;component/Resources/ownership.png"></Image>
+                    </MenuItem.Icon>
+                    <MenuItem Header="True">
+                        <MenuItem.Icon>
+                            <Image Width="16" Height="16" Source="/DeadLock;component/Resources/allow.png"></Image>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <MenuItem Header="False">
+                        <MenuItem.Icon>
+                            <Image Width="16" Height="16" Source="/DeadLock;component/Resources/delete.png"></Image>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                </MenuItem>
+                <Separator></Separator>
+                <MenuItem Header="Delete item(s)">
+                    <MenuItem.Icon>
+                        <Image Width="16" Height="16" Source="/DeadLock;component/Resources/delete.png"></Image>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="Delete all items">
+                    <MenuItem.Icon>
+                        <Image Width="16" Height="16" Source="/DeadLock;component/Resources/exit.png"></Image>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <Separator></Separator>
+                <MenuItem Header="Cancel operation">
+                    <MenuItem.Icon>
+                        <Image Width="16" Height="16" Source="/DeadLock;component/Resources/delete.png"></Image>
+                    </MenuItem.Icon>
+                </MenuItem>
+            </MenuItem>
+            <MenuItem Header="View">
+                <MenuItem Header="Details" IsCheckable="True"></MenuItem>
+            </MenuItem>
+            <MenuItem Header="Tools">
+                <MenuItem Header="Properties">
+                    <MenuItem.Icon>
+                        <Image Width="16" Height="16" Source="/DeadLock;component/Resources/details.png"></Image>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <Separator></Separator>
+                <MenuItem Header="Settings">
+                    <MenuItem.Icon>
+                        <Image Width="16" Height="16" Source="/DeadLock;component/Resources/settings.png"></Image>
+                    </MenuItem.Icon>
+                </MenuItem>
+            </MenuItem>
+            <MenuItem Header="Help">
+                <MenuItem Header="Help">
+                    <MenuItem.Icon>
+                        <Image Width="16" Height="16" Source="/DeadLock;component/Resources/help.png"></Image>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <Separator></Separator>
+                <MenuItem Header="Check for updates">
+                    <MenuItem.Icon>
+                        <Image Width="16" Height="16" Source="/DeadLock;component/Resources/update.png"></Image>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <Separator></Separator>
+                <MenuItem Header="Homepage">
+                    <MenuItem.Icon>
+                        <Image Width="16" Height="16" Source="/DeadLock;component/Resources/website.png"></Image>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="License">
+                    <MenuItem.Icon>
+                        <Image Width="16" Height="16" Source="/DeadLock;component/Resources/license.png"></Image>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <Separator></Separator>
+                <MenuItem Header="About">
+                    <MenuItem.Icon>
+                        <Image Width="16" Height="16" Source="/DeadLock;component/Resources/about.png"></Image>
+                    </MenuItem.Icon>
+                </MenuItem>
+            </MenuItem>
+        </Menu>
+    </Grid>
+</syncfusion:ChromelessWindow>
