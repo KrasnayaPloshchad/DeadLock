@@ -119,6 +119,7 @@
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -131,12 +132,11 @@
   <ItemGroup>
     <Resource Include="dlicon.ico" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
-    <Resource Include="Resources\about.png" />
+    <None Include="Resources\virustotal.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\advancedsettings.png" />
+    <Resource Include="Resources\about.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\allow.png" />
@@ -188,12 +188,6 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\update.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\VirusTotal.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\visibility.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\website.png" />

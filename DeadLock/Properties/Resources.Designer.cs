@@ -73,29 +73,9 @@ namespace DeadLock.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap advancedsettings {
-            get {
-                object obj = ResourceManager.GetObject("advancedsettings", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap allow {
             get {
                 object obj = ResourceManager.GetObject("allow", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap autosize {
-            get {
-                object obj = ResourceManager.GetObject("autosize", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -253,19 +233,9 @@ namespace DeadLock.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap VirusTotal {
+        internal static System.Drawing.Bitmap virustotal {
             get {
-                object obj = ResourceManager.GetObject("VirusTotal", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap visibility {
-            get {
-                object obj = ResourceManager.GetObject("visibility", resourceCulture);
+                object obj = ResourceManager.GetObject("virustotal", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
