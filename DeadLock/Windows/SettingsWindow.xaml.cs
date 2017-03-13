@@ -19,9 +19,36 @@ namespace DeadLock.Windows
     /// </summary>
     public partial class SettingsWindow
     {
-        public SettingsWindow()
+        #region Variables
+        private readonly MainWindow _mw;
+        #endregion
+
+        public SettingsWindow(MainWindow mainWindow)
         {
+            _mw = mainWindow;
             InitializeComponent();
+
+            LoadSettings();
+        }
+
+        private void LoadSettings()
+        {
+            try
+            {
+                ChbAutoUpdate.IsChecked = Properties.Settings.Default.AutoUpdate;
+                ChbAdminWarning.IsChecked = Properties.Settings.Default.AdminWarning;
+                ChbStartMinimized.IsChecked = Properties.Settings.Default.StartMinimized;
+
+                CboStyle.SelectedValue = Properties.Settings.Default.VisualStyle;
+                CpMetroBrush.Color = Properties.Settings.Default.MetroColor;
+                IntBorderThickness.Value = Properties.Settings.Default.BorderThickness;
+
+                ChbAutoOwnership.IsChecked = Properties.Settings.Default.AutoOwnership;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "DeadLock", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
         }
     }
 }

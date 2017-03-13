@@ -16,6 +16,9 @@ namespace DeadLock.Windows
             LoadTheme();
         }
 
+        /// <summary>
+        /// Change the theme of the window, depending on user settings
+        /// </summary>
         private void LoadTheme()
         {
             StyleManager.ChangeStyle(this);

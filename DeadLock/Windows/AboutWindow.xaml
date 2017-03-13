@@ -18,9 +18,11 @@
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="Auto"></ColumnDefinition>
                 <ColumnDefinition Width="Auto"></ColumnDefinition>
+                <ColumnDefinition Width="Auto"></ColumnDefinition>
             </Grid.ColumnDefinitions>
             <Image Width="64" Height="64" Source="/DeadLock;component/Resources/deadlock.png"/>
-            <TextBlock Grid.Column="1">
+            <Separator Margin="5"  Grid.Column="1" Style="{StaticResource {x:Static ToolBar.SeparatorStyleKey}}" />
+            <TextBlock Grid.Column="2">
 DeadLock was created by DeadLine.<LineBreak></LineBreak>
 <LineBreak></LineBreak>
 Images: small-n-flat by paomedia<LineBreak></LineBreak>
