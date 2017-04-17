@@ -39,6 +39,7 @@ namespace DeadLock.Windows
                 {
                     WindowState = WindowState.Minimized;
                 }
+                MniDetails.IsChecked = Properties.Settings.Default.ShowDetails;
             }
             catch (Exception ex)
             {
@@ -62,6 +63,29 @@ namespace DeadLock.Windows
         private void Update(bool showErrors, bool showNoUpdate)
         {
             _updateManager.CheckForUpdate(showErrors, showNoUpdate);
+        }
+
+        private void DetailsItem_CheckedChanged(object sender, RoutedEventArgs e)
+        {
+            if (LsvDetails == null || LblDetails == null) return;
+
+            if (MniDetails.IsChecked)
+            {
+                LblDetails.Visibility = Visibility.Visible;
+                LsvDetails.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                LblDetails.Visibility = Visibility.Collapsed;
+                LsvDetails.Visibility = Visibility.Collapsed;
+            }
+
+            SizeToContent = SizeToContent.WidthAndHeight;
+        }
+
+        private void RefreshMenuItem_Click(object sender, RoutedEventArgs e)
+        {
+            SizeToContent = SizeToContent.WidthAndHeight;
         }
     }
 }

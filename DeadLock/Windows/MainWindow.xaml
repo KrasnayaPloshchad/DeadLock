@@ -15,6 +15,7 @@
             <RowDefinition></RowDefinition>
             <RowDefinition Height="Auto"></RowDefinition>
             <RowDefinition></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
         </Grid.RowDefinitions>
         <Menu>
             <MenuItem Header="File">
@@ -102,7 +103,13 @@
                 </MenuItem>
             </MenuItem>
             <MenuItem Header="View">
-                <MenuItem Header="Details" IsCheckable="True"></MenuItem>
+                <MenuItem x:Name="MniDetails" Header="Details" Checked="DetailsItem_CheckedChanged" Unchecked="DetailsItem_CheckedChanged" IsChecked="True" IsCheckable="True"></MenuItem>
+                <Separator></Separator>
+                <MenuItem Header="Refresh" Click="RefreshMenuItem_Click">
+                    <MenuItem.Icon>
+                        <Image Width="16" Height="16" Source="/DeadLock;component/Resources/restart.png"></Image>
+                    </MenuItem.Icon>
+                </MenuItem>
             </MenuItem>
             <MenuItem Header="Tools">
                 <MenuItem Header="Properties">
@@ -148,7 +155,13 @@
                 </MenuItem>
             </MenuItem>
         </Menu>
-        <ListView Grid.Row="1">
+        <ListView MinHeight="100" x:Name="LsvFiles" Margin="5" Grid.Row="1">
+            <ListView.ItemContainerStyle>
+                <Style TargetType="{x:Type ListViewItem}">
+                    <Setter Property="BorderBrush" Value="LightGray" />
+                    <Setter Property="BorderThickness" Value="0,0,0,1" />
+                </Style>
+            </ListView.ItemContainerStyle>
             <ListView.View>
                 <GridView x:Name="DynGridFile">
                     <GridViewColumn Header="Path" DisplayMemberBinding="{Binding ActualPath}" Width="Auto" />
@@ -157,8 +170,14 @@
                 </GridView>
             </ListView.View>
         </ListView>
-        <Label Grid.Row="2" Content="Details:"></Label>
-        <ListView Grid.Row="3">
+        <Label x:Name="LblDetails" Grid.Row="2" Content="Details:" Margin="5,0,0,0"></Label>
+        <ListView MinHeight="100" x:Name="LsvDetails" Margin="5" Grid.Row="3">
+            <ListView.ItemContainerStyle>
+                <Style TargetType="{x:Type ListViewItem}">
+                    <Setter Property="BorderBrush" Value="LightGray" />
+                    <Setter Property="BorderThickness" Value="0,0,0,1" />
+                </Style>
+            </ListView.ItemContainerStyle>
             <ListView.View>
                 <GridView x:Name="DynGridDetails">
                     <GridViewColumn Header="File name" DisplayMemberBinding="{Binding FileName}" Width="Auto" />
@@ -167,5 +186,10 @@
                 </GridView>
             </ListView.View>
         </ListView>
+        <StatusBar Grid.Row="4">
+            <StatusBarItem>
+                <Label Content="Version: 1.5"></Label>
+            </StatusBarItem>
+        </StatusBar>
     </Grid>
 </syncfusion:ChromelessWindow>
