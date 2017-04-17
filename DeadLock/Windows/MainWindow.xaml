@@ -35,7 +35,7 @@
                         <Image Width="16" Height="16" Source="/DeadLock;component/Resources/restart.png"></Image>
                     </MenuItem.Icon>
                 </MenuItem>
-                <MenuItem Header="Exit" Click="ExitMenuItem_OnClick">
+                <MenuItem Header="Exit" Click="ExitMenuItem_Click">
                     <MenuItem.Icon>
                         <Image Width="16" Height="16" Source="/DeadLock;component/Resources/exit.png"></Image>
                     </MenuItem.Icon>
@@ -125,24 +125,24 @@
                 </MenuItem>
             </MenuItem>
             <MenuItem Header="Help">
-                <MenuItem Header="Help">
+                <MenuItem Header="Help" Click="HelpMenuItem_Click">
                     <MenuItem.Icon>
                         <Image Width="16" Height="16" Source="/DeadLock;component/Resources/help.png"></Image>
                     </MenuItem.Icon>
                 </MenuItem>
                 <Separator></Separator>
-                <MenuItem Header="Check for updates">
+                <MenuItem Header="Check for updates" Click="UpdateMenuItem_Click">
                     <MenuItem.Icon>
                         <Image Width="16" Height="16" Source="/DeadLock;component/Resources/update.png"></Image>
                     </MenuItem.Icon>
                 </MenuItem>
                 <Separator></Separator>
-                <MenuItem Header="Homepage">
+                <MenuItem Header="Homepage" Click="WebsiteMenuItem_Click">
                     <MenuItem.Icon>
                         <Image Width="16" Height="16" Source="/DeadLock;component/Resources/website.png"></Image>
                     </MenuItem.Icon>
                 </MenuItem>
-                <MenuItem Header="License">
+                <MenuItem Header="License" Click="LicenseMenuItem_Click">
                     <MenuItem.Icon>
                         <Image Width="16" Height="16" Source="/DeadLock;component/Resources/license.png"></Image>
                     </MenuItem.Icon>

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Reflection;
 using System.Security.Principal;
 using System.Windows;
@@ -110,7 +111,7 @@ namespace DeadLock.Windows
             Application.Current.Shutdown();
         }
 
-        private void ExitMenuItem_OnClick(object sender, RoutedEventArgs e)
+        private void ExitMenuItem_Click(object sender, RoutedEventArgs e)
         {
             Application.Current.Shutdown();
         }
@@ -119,6 +120,47 @@ namespace DeadLock.Windows
         {
             SettingsWindow settingsWindow = new SettingsWindow(this);
             settingsWindow.ShowDialog();
+        }
+
+        private void HelpMenuItem_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                Process.Start(AppDomain.CurrentDomain.BaseDirectory + "\\help.pdf");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "DeadLock", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+        }
+
+        private void WebsiteMenuItem_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                Process.Start("http://codedead.com/");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "DeadLock", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+        }
+
+        private void LicenseMenuItem_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                Process.Start(AppDomain.CurrentDomain.BaseDirectory + "\\gpl.pdf");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "DeadLock", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+        }
+
+        private void UpdateMenuItem_Click(object sender, RoutedEventArgs e)
+        {
+            Update(true, true);
         }
     }
 }

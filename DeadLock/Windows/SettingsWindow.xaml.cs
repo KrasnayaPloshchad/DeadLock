@@ -56,6 +56,7 @@ namespace DeadLock.Windows
 
         private void ResetButton_Click(object sender, RoutedEventArgs e)
         {
+            if (MessageBox.Show("Are you sure that you want to reset all settings?", "DeadLock", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.No) return;
             try
             {
                 Properties.Settings.Default.Reset();
@@ -65,6 +66,8 @@ namespace DeadLock.Windows
                 LoadTheme();
 
                 _mw.LoadTheme();
+
+                MessageBox.Show("All settings have been reset!", "DeadLock", MessageBoxButton.OK, MessageBoxImage.Information);
             }
             catch (Exception ex)
             {
@@ -88,7 +91,9 @@ namespace DeadLock.Windows
 
                 Properties.Settings.Default.Save();
 
+                LoadTheme();
                 _mw.LoadTheme();
+
                 MessageBox.Show("All settings have been saved!", "DeadLock", MessageBoxButton.OK, MessageBoxImage.Information);
             }
             catch (Exception ex)
