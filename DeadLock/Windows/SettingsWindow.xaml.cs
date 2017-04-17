@@ -67,6 +67,7 @@ namespace DeadLock.Windows
                 LoadTheme();
 
                 _mw.LoadTheme();
+                _mw.LoadGlobalSettings();
 
                 MessageBox.Show("All settings have been reset!", "DeadLock", MessageBoxButton.OK, MessageBoxImage.Information);
             }
@@ -95,6 +96,7 @@ namespace DeadLock.Windows
 
                 LoadTheme();
                 _mw.LoadTheme();
+                _mw.LoadGlobalSettings();
 
                 MessageBox.Show("All settings have been saved!", "DeadLock", MessageBoxButton.OK, MessageBoxImage.Information);
             }

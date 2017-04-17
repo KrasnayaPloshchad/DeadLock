@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Security.AccessControl;
 using System.Security.Principal;
@@ -47,5 +48,6 @@ namespace DeadLock.Classes
         public string ActualPath { get; set; }
         public string Status { get; set; }
         public string Ownership { get; set; }
+        public List<HandleLockerDetails> Details{get; set; }
     }
 }

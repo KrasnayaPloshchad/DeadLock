@@ -51,6 +51,18 @@ namespace DeadLock.Windows
                 {
                     WindowState = WindowState.Minimized;
                 }
+                LoadGlobalSettings();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "DeadLock", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+        }
+
+        internal void LoadGlobalSettings()
+        {
+            try
+            {
                 AllowDrop = Properties.Settings.Default.AllowDragDrop;
                 MniDetails.IsChecked = Properties.Settings.Default.ShowDetails;
             }
