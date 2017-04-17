@@ -1,16 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
+using DeadLock.Classes;
 
 namespace DeadLock.Windows
 {
@@ -25,12 +15,24 @@ namespace DeadLock.Windows
 
         public SettingsWindow(MainWindow mainWindow)
         {
-            _mw = mainWindow;
             InitializeComponent();
+            _mw = mainWindow;
 
+            LoadTheme();
             LoadSettings();
         }
 
+        /// <summary>
+        /// Change the visual style of the window, depending on user settings
+        /// </summary>
+        private void LoadTheme()
+        {
+            StyleManager.ChangeStyle(this);
+        }
+
+        /// <summary>
+        /// Change the GUI elements to represent the latest settings
+        /// </summary>
         private void LoadSettings()
         {
             try
@@ -38,12 +40,56 @@ namespace DeadLock.Windows
                 ChbAutoUpdate.IsChecked = Properties.Settings.Default.AutoUpdate;
                 ChbAdminWarning.IsChecked = Properties.Settings.Default.AdminWarning;
                 ChbStartMinimized.IsChecked = Properties.Settings.Default.StartMinimized;
+                ChbShowDetails.IsChecked = Properties.Settings.Default.ShowDetails;
 
                 CboStyle.SelectedValue = Properties.Settings.Default.VisualStyle;
                 CpMetroBrush.Color = Properties.Settings.Default.MetroColor;
                 IntBorderThickness.Value = Properties.Settings.Default.BorderThickness;
 
                 ChbAutoOwnership.IsChecked = Properties.Settings.Default.AutoOwnership;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "DeadLock", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+        }
+
+        private void ResetButton_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                Properties.Settings.Default.Reset();
+                Properties.Settings.Default.Save();
+
+                LoadSettings();
+                LoadTheme();
+
+                _mw.LoadTheme();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "DeadLock", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+        }
+
+        private void SaveButton_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                if (ChbAutoUpdate.IsChecked != null) Properties.Settings.Default.AutoUpdate = (bool)ChbAutoUpdate.IsChecked;
+                if (ChbAdminWarning.IsChecked != null) Properties.Settings.Default.AdminWarning = (bool)ChbAdminWarning.IsChecked;
+                if (ChbStartMinimized.IsChecked != null) Properties.Settings.Default.StartMinimized = (bool)ChbStartMinimized.IsChecked;
+                if (ChbShowDetails.IsChecked != null) Properties.Settings.Default.ShowDetails = (bool)ChbShowDetails.IsChecked;
+
+                Properties.Settings.Default.VisualStyle = (string)CboStyle.SelectedValue;
+                Properties.Settings.Default.MetroColor = CpMetroBrush.Color;
+                if (IntBorderThickness.Value != null) Properties.Settings.Default.BorderThickness = (int)IntBorderThickness.Value;
+                if (ChbAutoOwnership.IsChecked != null) Properties.Settings.Default.AutoOwnership = (bool)ChbAutoOwnership.IsChecked;
+
+                Properties.Settings.Default.Save();
+
+                _mw.LoadTheme();
+                MessageBox.Show("All settings have been saved!", "DeadLock", MessageBoxButton.OK, MessageBoxImage.Information);
             }
             catch (Exception ex)
             {

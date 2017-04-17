@@ -21,10 +21,12 @@
                         <RowDefinition></RowDefinition>
                         <RowDefinition></RowDefinition>
                         <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
                     </Grid.RowDefinitions>
                     <CheckBox x:Name="ChbAutoUpdate" Content="Automatically check for updates"></CheckBox>
                     <CheckBox x:Name="ChbAdminWarning" Grid.Row="1" Content="Show administrator warning"></CheckBox>
                     <CheckBox x:Name="ChbStartMinimized" Grid.Row="2" Content="Start minimized"></CheckBox>
+                    <CheckBox x:Name="ChbShowDetails" Grid.Row="3" Content="Show details"></CheckBox>
                 </Grid>
             </syncfusion:TabItemExt>
             <syncfusion:TabItemExt Header="Theme">
@@ -81,8 +83,8 @@
                 <ColumnDefinition></ColumnDefinition>
                 <ColumnDefinition></ColumnDefinition>
             </Grid.ColumnDefinitions>
-            <Button Margin="5" Content="Reset"></Button>
-            <Button Margin="5" Grid.Column="2" Content="Save"></Button>
+            <Button Margin="5" Content="Reset" Click="ResetButton_Click"></Button>
+            <Button Margin="5" Grid.Column="2" Content="Save" Click="SaveButton_Click"></Button>
         </Grid>
     </Grid>
 </syncfusion:ChromelessWindow>
