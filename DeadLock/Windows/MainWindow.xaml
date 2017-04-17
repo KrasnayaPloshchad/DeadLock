@@ -8,6 +8,8 @@
     TitleTextAlignment="Center"
     AllowsTransparency="True"
     mc:Ignorable="d"
+    AllowDrop="True"
+    Drop="MainWindow_OnDrop"
     Title="DeadLock" Height="350" Width="525" WindowStartupLocation="CenterScreen" Icon="/DeadLock;component/dlicon.ico">
     <Grid>
         <Grid.RowDefinitions>

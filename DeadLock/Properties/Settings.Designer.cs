@@ -118,5 +118,17 @@ namespace DeadLock.Properties {
                 this["ShowDetails"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool AllowDragDrop {
+            get {
+                return ((bool)(this["AllowDragDrop"]));
+            }
+            set {
+                this["AllowDragDrop"] = value;
+            }
+        }
     }
 }

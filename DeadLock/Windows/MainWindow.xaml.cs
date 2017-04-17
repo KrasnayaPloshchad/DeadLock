@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Diagnostics;
+using System.IO;
 using System.Reflection;
 using System.Security.Principal;
 using System.Windows;
@@ -50,6 +51,7 @@ namespace DeadLock.Windows
                 {
                     WindowState = WindowState.Minimized;
                 }
+                AllowDrop = Properties.Settings.Default.AllowDragDrop;
                 MniDetails.IsChecked = Properties.Settings.Default.ShowDetails;
             }
             catch (Exception ex)
@@ -161,6 +163,43 @@ namespace DeadLock.Windows
         private void UpdateMenuItem_Click(object sender, RoutedEventArgs e)
         {
             Update(true, true);
+        }
+
+        private void AddFile(string path)
+        {
+            bool already = false;
+            foreach (HandleLocker hl in LsvFiles.Items)
+            {
+                if (hl.ActualPath != path) continue;
+                already = true;
+                break;
+            }
+
+            if (already) return;
+            {
+                try
+                {
+                    HandleLocker hl = new HandleLocker(path);
+                    LsvFiles.Items.Add(hl);
+                }
+                catch (FileNotFoundException ex)
+                {
+                    MessageBox.Show(ex.Message, "DeadLock", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
+            }
+        }
+
+        private void MainWindow_OnDrop(object sender, DragEventArgs e)
+        {
+            if (!e.Data.GetDataPresent(DataFormats.FileDrop)) return;
+            string[] files = (string[])e.Data.GetData(DataFormats.FileDrop);
+
+            if (files == null) return;
+
+            foreach (string s in files)
+            {
+                AddFile(s);
+            }
         }
     }
 }

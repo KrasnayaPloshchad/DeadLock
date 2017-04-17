@@ -40,6 +40,7 @@ namespace DeadLock.Windows
                 ChbAutoUpdate.IsChecked = Properties.Settings.Default.AutoUpdate;
                 ChbAdminWarning.IsChecked = Properties.Settings.Default.AdminWarning;
                 ChbStartMinimized.IsChecked = Properties.Settings.Default.StartMinimized;
+                ChbDragDrop.IsChecked = Properties.Settings.Default.AllowDragDrop;
                 ChbShowDetails.IsChecked = Properties.Settings.Default.ShowDetails;
 
                 CboStyle.SelectedValue = Properties.Settings.Default.VisualStyle;
@@ -82,6 +83,7 @@ namespace DeadLock.Windows
                 if (ChbAutoUpdate.IsChecked != null) Properties.Settings.Default.AutoUpdate = (bool)ChbAutoUpdate.IsChecked;
                 if (ChbAdminWarning.IsChecked != null) Properties.Settings.Default.AdminWarning = (bool)ChbAdminWarning.IsChecked;
                 if (ChbStartMinimized.IsChecked != null) Properties.Settings.Default.StartMinimized = (bool)ChbStartMinimized.IsChecked;
+                if (ChbDragDrop.IsChecked != null) Properties.Settings.Default.AllowDragDrop = (bool) ChbDragDrop.IsChecked;
                 if (ChbShowDetails.IsChecked != null) Properties.Settings.Default.ShowDetails = (bool)ChbShowDetails.IsChecked;
 
                 Properties.Settings.Default.VisualStyle = (string)CboStyle.SelectedValue;
