@@ -11,9 +11,9 @@ Do not hesitate to contact us if you have a question or if you need support with
 
 # Requirements in order to build DeadLock:
 * Turn off 'Prefer 32-bit'
-* [Syncfusion](https://www.syncfusion.com/products/communitylicense)
+* [Syncfusion for WPF](https://www.syncfusion.com/products/communitylicense)
 * .NET Framework 4.7
-* [Visual Studio](https://visualstudio.com)
+* [Visual Studio 2015 or higher](https://visualstudio.com)
 
 # License
 DeadLock is licensed under the GPLv3.
