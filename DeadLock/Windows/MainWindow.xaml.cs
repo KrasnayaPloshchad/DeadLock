@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Reflection;
+using System.Security.Principal;
 using System.Windows;
 using DeadLock.Classes;
 
@@ -24,6 +25,11 @@ namespace DeadLock.Windows
             LoadSettings();
         }
 
+        private static bool IsAdministrator()
+        {
+            return new WindowsPrincipal(WindowsIdentity.GetCurrent()).IsInRole(WindowsBuiltInRole.Administrator);
+        }
+
         /// <summary>
         /// Load the user settings
         /// </summary>
@@ -31,6 +37,10 @@ namespace DeadLock.Windows
         {
             try
             {
+                if (Properties.Settings.Default.AdminWarning && !IsAdministrator())
+                {
+                    MessageBox.Show("DeadLock might not function correctly without administrative rights!", "DeadLock", MessageBoxButton.OK, MessageBoxImage.Warning);
+                }
                 if (Properties.Settings.Default.AutoUpdate)
                 {
                     Update(true, false);
@@ -103,6 +113,12 @@ namespace DeadLock.Windows
         private void ExitMenuItem_OnClick(object sender, RoutedEventArgs e)
         {
             Application.Current.Shutdown();
+        }
+
+        private void SettingsMenuItem_Click(object sender, RoutedEventArgs e)
+        {
+            SettingsWindow settingsWindow = new SettingsWindow(this);
+            settingsWindow.ShowDialog();
         }
     }
 }

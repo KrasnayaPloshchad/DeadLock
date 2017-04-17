@@ -118,7 +118,7 @@
                     </MenuItem.Icon>
                 </MenuItem>
                 <Separator></Separator>
-                <MenuItem Header="Settings">
+                <MenuItem Header="Settings" Click="SettingsMenuItem_Click">
                     <MenuItem.Icon>
                         <Image Width="16" Height="16" Source="/DeadLock;component/Resources/settings.png"></Image>
                     </MenuItem.Icon>
