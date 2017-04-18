@@ -4,7 +4,13 @@ using System.IO;
 using System.Reflection;
 using System.Security.Principal;
 using System.Windows;
+using System.Windows.Forms;
 using DeadLock.Classes;
+using Application = System.Windows.Application;
+using DataFormats = System.Windows.DataFormats;
+using DragEventArgs = System.Windows.DragEventArgs;
+using MessageBox = System.Windows.MessageBox;
+using OpenFileDialog = Microsoft.Win32.OpenFileDialog;
 
 namespace DeadLock.Windows
 {
@@ -88,6 +94,21 @@ namespace DeadLock.Windows
         private void Update(bool showErrors, bool showNoUpdate)
         {
             _updateManager.CheckForUpdate(showErrors, showNoUpdate);
+        }
+
+        private void OpenFileMenuItem_Click(object sender, RoutedEventArgs e)
+        {
+            OpenFileDialog ofd = new OpenFileDialog
+            {
+                Multiselect = true,
+                Filter = "All files (*.*)|*.*"
+            };
+
+            if (ofd.ShowDialog() != true) return;
+            foreach (string s in ofd.FileNames)
+            {
+                AddFile(s);
+            }
         }
 
         private void DetailsItem_CheckedChanged(object sender, RoutedEventArgs e)
@@ -211,6 +232,18 @@ namespace DeadLock.Windows
             foreach (string s in files)
             {
                 AddFile(s);
+            }
+        }
+
+        private void OpenFolderMenuItem_Click(object sender, RoutedEventArgs e)
+        {
+            FolderBrowserDialog fbd = new FolderBrowserDialog();
+            if (fbd.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                foreach (string s in Directory.GetFiles(fbd.SelectedPath, "*.*", SearchOption.AllDirectories))
+                {
+                    AddFile(s);
+                }
             }
         }
     }

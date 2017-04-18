@@ -21,12 +21,12 @@
         </Grid.RowDefinitions>
         <Menu>
             <MenuItem Header="File">
-                <MenuItem Header="Open file(s)">
+                <MenuItem Header="Open file(s)" Click="OpenFileMenuItem_Click">
                     <MenuItem.Icon>
                         <Image Width="16" Height="16" Source="/DeadLock;component/Resources/file.png"></Image>
                     </MenuItem.Icon>
                 </MenuItem>
-                <MenuItem Header="Open folder">
+                <MenuItem Header="Open folder" Click="OpenFolderMenuItem_Click">
                     <MenuItem.Icon>
                         <Image Width="16" Height="16" Source="/DeadLock;component/Resources/folder.png"></Image>
                     </MenuItem.Icon>
@@ -158,6 +158,85 @@
             </MenuItem>
         </Menu>
         <ListView MinHeight="100" x:Name="LsvFiles" Margin="5" Grid.Row="1">
+            <ListView.ContextMenu>
+                <ContextMenu>
+                    <MenuItem Header="Unlock">
+                        <MenuItem.Icon>
+                            <Image Source="/DeadLock;component/Resources/unlock.png" />
+                        </MenuItem.Icon>
+                        <MenuItem Header="Unlock">
+                            <MenuItem.Icon>
+                                <Image Width="16" Height="16" Source="/DeadLock;component/Resources/unlock.png"></Image>
+                            </MenuItem.Icon>
+                        </MenuItem>
+                        <Separator></Separator>
+                        <MenuItem Header="Copy">
+                            <MenuItem.Icon>
+                                <Image Width="16" Height="16" Source="/DeadLock;component/Resources/copy.png"></Image>
+                            </MenuItem.Icon>
+                        </MenuItem>
+                        <MenuItem Header="Move">
+                            <MenuItem.Icon>
+                                <Image Width="16" Height="16" Source="/DeadLock;component/Resources/move.png"></Image>
+                            </MenuItem.Icon>
+                        </MenuItem>
+                        <Separator></Separator>
+                        <MenuItem Header="Remove">
+                            <MenuItem.Icon>
+                                <Image Width="16" Height="16" Source="/DeadLock;component/Resources/delete.png"></Image>
+                            </MenuItem.Icon>
+                        </MenuItem>
+                    </MenuItem>
+                    <MenuItem Header="Ownership">
+                        <MenuItem.Icon>
+                            <Image Source="/DeadLock;component/Resources/ownership.png" />
+                        </MenuItem.Icon>
+                        <MenuItem Header="True">
+                            <MenuItem.Icon>
+                                <Image Width="16" Height="16" Source="/DeadLock;component/Resources/allow.png"></Image>
+                            </MenuItem.Icon>
+                        </MenuItem>
+                        <MenuItem Header="False">
+                            <MenuItem.Icon>
+                                <Image  Width="16" Height="16" Source="/DeadLock;component/Resources/delete.png"></Image>
+                            </MenuItem.Icon>
+                        </MenuItem>
+                    </MenuItem>
+                    <Separator></Separator>
+                    <MenuItem Header="Details">
+                        <MenuItem.Icon>
+                            <Image Width="16" Height="16" Source="/DeadLock;component/Resources/details.png" />
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <MenuItem Header="Properties">
+                        <MenuItem.Icon>
+                            <Image Width="16" Height="16" Source="/DeadLock;component/Resources/details.png" />
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <Separator></Separator>
+                    <MenuItem Header="Delete item(s)">
+                        <MenuItem.Icon>
+                            <Image Width="16" Height="16" Source="/DeadLock;component/Resources/delete.png" />
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <MenuItem Header="Delete all items">
+                        <MenuItem.Icon>
+                            <Image Width="16" Height="16" Source="/DeadLock;component/Resources/exit.png" />
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <Separator></Separator>
+                    <MenuItem Header="Open in VirusTotal">
+                        <MenuItem.Icon>
+                            <Image Width="16" Height="16" Source="/DeadLock;component/Resources/virustotal.png" />
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <MenuItem Header="Cancel operation">
+                        <MenuItem.Icon>
+                            <Image Width="16" Height="16" Source="/DeadLock;component/Resources/delete.png" />
+                        </MenuItem.Icon>
+                    </MenuItem>
+                </ContextMenu>
+            </ListView.ContextMenu>
             <ListView.ItemContainerStyle>
                 <Style TargetType="{x:Type ListViewItem}">
                     <Setter Property="BorderBrush" Value="LightGray" />
@@ -182,7 +261,6 @@
             </ListView.ItemContainerStyle>
             <ListView.View>
                 <GridView x:Name="DynGridDetails">
-                    <GridViewColumn Header="File name" DisplayMemberBinding="{Binding FileName}" Width="Auto" />
                     <GridViewColumn Header="Path" DisplayMemberBinding="{Binding FilePath}" Width="Auto" />
                     <GridViewColumn Header="Process ID" DisplayMemberBinding="{Binding ProcessID}" Width="Auto" />
                 </GridView>

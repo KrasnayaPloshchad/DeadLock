@@ -140,7 +140,7 @@
     <Resource Include="dlicon.ico" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\virustotal.png" />
+    <Resource Include="Resources\virustotal.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\about.png" />

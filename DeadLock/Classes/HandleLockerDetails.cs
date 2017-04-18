@@ -8,14 +8,7 @@ namespace DeadLock.Classes
 {
     internal class HandleLockerDetails
     {
-        private string _filePath;
-
-        internal HandleLockerDetails(string path)
-        {
-            _filePath = path;
-        }
-
-        public string Path { get; set; }
+        public string FilePath { get; set; }
         // ReSharper disable once InconsistentNaming
         public string ProcessID { get; set; }
     }
