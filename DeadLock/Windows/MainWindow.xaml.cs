@@ -135,19 +135,9 @@ namespace DeadLock.Windows
 
         private void DetailsItem_CheckedChanged(object sender, RoutedEventArgs e)
         {
-            if (LsvDetails == null || LblDetails == null) return;
+            if (LsvDetails == null) return;
 
-            if (MniDetails.IsChecked)
-            {
-                LblDetails.Visibility = Visibility.Visible;
-                LsvDetails.Visibility = Visibility.Visible;
-            }
-            else
-            {
-                LblDetails.Visibility = Visibility.Collapsed;
-                LsvDetails.Visibility = Visibility.Collapsed;
-            }
-
+            LsvDetails.Visibility = MniDetails.IsChecked ? Visibility.Visible : Visibility.Collapsed;
             SizeToContent = SizeToContent.WidthAndHeight;
         }
 

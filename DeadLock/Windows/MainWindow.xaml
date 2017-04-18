@@ -15,7 +15,6 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"></RowDefinition>
             <RowDefinition></RowDefinition>
-            <RowDefinition Height="Auto"></RowDefinition>
             <RowDefinition></RowDefinition>
             <RowDefinition Height="Auto"></RowDefinition>
         </Grid.RowDefinitions>
@@ -251,8 +250,7 @@
                 </GridView>
             </ListView.View>
         </ListView>
-        <Label x:Name="LblDetails" Grid.Row="2" Content="Details:" Margin="5,0,0,0"></Label>
-        <ListView MinHeight="100" x:Name="LsvDetails" Margin="5" Grid.Row="3">
+        <ListView MinHeight="100" x:Name="LsvDetails" Margin="5" Grid.Row="2">
             <ListView.ContextMenu>
                 <ContextMenu>
                     <MenuItem Header="Properties">
@@ -292,7 +290,7 @@
                 </GridView>
             </ListView.View>
         </ListView>
-        <StatusBar Grid.Row="4">
+        <StatusBar Grid.Row="3">
             <StatusBarItem>
                 <Label x:Name="LblVersion" Content="Version: "></Label>
             </StatusBarItem>
