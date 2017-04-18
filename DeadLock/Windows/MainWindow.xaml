@@ -294,7 +294,7 @@
         </ListView>
         <StatusBar Grid.Row="4">
             <StatusBarItem>
-                <Label Content="Version: 1.5"></Label>
+                <Label x:Name="LblVersion" Content="Version: "></Label>
             </StatusBarItem>
         </StatusBar>
     </Grid>

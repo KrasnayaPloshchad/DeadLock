@@ -31,8 +31,27 @@ namespace DeadLock.Windows
 
             LoadTheme();
             LoadSettings();
+            LoadArguments();
+
+            LblVersion.Content += Assembly.GetExecutingAssembly().GetName().Version.ToString();
         }
 
+        /// <summary>
+        /// Load all variables as file paths and load them into the GUI
+        /// </summary>
+        private void LoadArguments()
+        {
+            string[] args = Environment.GetCommandLineArgs();
+            for (int i = 1; i < args.Length; i++)
+            {
+                AddFile(args[i]);
+            }
+        }
+
+        /// <summary>
+        /// Check whether the current user is running DeadLock using administrative rights or not
+        /// </summary>
+        /// <returns>A boolean to represent whether the current user is an administrator or not</returns>
         private static bool IsAdministrator()
         {
             return new WindowsPrincipal(WindowsIdentity.GetCurrent()).IsInRole(WindowsBuiltInRole.Administrator);
@@ -65,6 +84,9 @@ namespace DeadLock.Windows
             }
         }
 
+        /// <summary>
+        /// Load settings that can be accessed by other objects and modified at run-time
+        /// </summary>
         internal void LoadGlobalSettings()
         {
             try
@@ -198,6 +220,10 @@ namespace DeadLock.Windows
             Update(true, true);
         }
 
+        /// <summary>
+        /// Add a file to the GUI
+        /// </summary>
+        /// <param name="path">The path of the file that should be added to the GUI</param>
         private void AddFile(string path)
         {
             bool already = false;
