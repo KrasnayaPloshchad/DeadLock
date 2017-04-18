@@ -6,6 +6,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:syncfusion="http://schemas.syncfusion.com/wpf"
     mc:Ignorable="d"
+    UseLayoutRounding="True"
     TitleTextAlignment="Center"
     AllowsTransparency="True"
     Title="DeadLock - About" Height="200" Width="300" WindowStartupLocation="CenterScreen" Icon="/DeadLock;component/dlicon.ico">
