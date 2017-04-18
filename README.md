@@ -13,7 +13,7 @@ Do not hesitate to contact us if you have a question or if you need support with
 * Turn off 'Prefer 32-bit'
 * [Syncfusion for WPF](https://www.syncfusion.com/products/communitylicense)
 * .NET Framework 4.7
-* [Visual Studio 2015 or higher](https://visualstudio.com)
+* [Visual Studio](https://visualstudio.com)
 
 # License
 DeadLock is licensed under the GPLv3.
