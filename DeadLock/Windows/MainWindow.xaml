@@ -162,7 +162,7 @@
                 <ContextMenu>
                     <MenuItem Header="Unlock">
                         <MenuItem.Icon>
-                            <Image Source="/DeadLock;component/Resources/unlock.png" />
+                            <Image Width="16" Height="16" Source="/DeadLock;component/Resources/unlock.png" />
                         </MenuItem.Icon>
                         <MenuItem Header="Unlock">
                             <MenuItem.Icon>
@@ -189,7 +189,7 @@
                     </MenuItem>
                     <MenuItem Header="Ownership">
                         <MenuItem.Icon>
-                            <Image Source="/DeadLock;component/Resources/ownership.png" />
+                            <Image Width="16" Height="16" Source="/DeadLock;component/Resources/ownership.png" />
                         </MenuItem.Icon>
                         <MenuItem Header="True">
                             <MenuItem.Icon>
@@ -253,6 +253,32 @@
         </ListView>
         <Label x:Name="LblDetails" Grid.Row="2" Content="Details:" Margin="5,0,0,0"></Label>
         <ListView MinHeight="100" x:Name="LsvDetails" Margin="5" Grid.Row="3">
+            <ListView.ContextMenu>
+                <ContextMenu>
+                    <MenuItem Header="Properties">
+                        <MenuItem.Icon>
+                            <Image Width="16" Height="16" Source="/DeadLock;component/Resources/details.png" />
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <MenuItem Header="Open file location">
+                        <MenuItem.Icon>
+                            <Image Width="16" Height="16" Source="/DeadLock;component/Resources/file.png" />
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <Separator></Separator>
+                    <MenuItem Header="Kill">
+                        <MenuItem.Icon>
+                            <Image Width="16" Height="16" Source="/DeadLock;component/Resources/delete.png" />
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <Separator></Separator>
+                    <MenuItem Header="Open in VirusTotal">
+                        <MenuItem.Icon>
+                            <Image Width="16" Height="16" Source="/DeadLock;component/Resources/virustotal.png" />
+                        </MenuItem.Icon>
+                    </MenuItem>
+                </ContextMenu>
+            </ListView.ContextMenu>
             <ListView.ItemContainerStyle>
                 <Style TargetType="{x:Type ListViewItem}">
                     <Setter Property="BorderBrush" Value="LightGray" />
